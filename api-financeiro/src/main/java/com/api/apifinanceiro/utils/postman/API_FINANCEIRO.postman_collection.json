@@ -1,0 +1,201 @@
+{
+	"info": {
+		"_postman_id": "d56ce585-3e42-42bb-a6ba-2665a85838fb",
+		"name": "API_FINANCEIRO",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29578706"
+	},
+	"item": [
+		{
+			"name": "POST",
+			"item": [
+				{
+					"name": "Cadastro - COMPLETO VÁLIDO",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idFuncionario\": \"550e8400-e29b-41d4-a716-446145642234\",\r\n    \"cargo\": \"INSTRUTOR\",\r\n    \"dataAdmissao\": \"2023-09-29T14:30+03:00\",\r\n    \"salario\": 5000.00,\r\n    \"clt\": \"33233\",\r\n    \"matricula\": \"33233\",\r\n    \"status\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/v1/financeiro",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"financeiro"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cadastro - INCOMPLETO VÁLIDO",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idFuncionario\": \"550e8400-e29b-41d4-a716-446655440000\",\r\n    \"cargo\": \"INSTRUTOR\",\r\n    \"dataAdmissao\": \"2023-09-29T14:30+03:00\",\r\n    \"salario\": 5550.00\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/v1/financeiro",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"financeiro"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cadastro - erro - DUPLICADO",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idFuncionario\": \"550e8400-e29b-41d4-a716-446145642234\",\r\n    \"cargo\": \"INSTRUTOR\",\r\n    \"dataAdmissao\": \"2023-09-29T14:30+03:00\",\r\n    \"salario\": 5000.00,\r\n    \"clt\": \"33233\",\r\n    \"matricula\": \"33233\",\r\n    \"status\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/v1/financeiro",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"financeiro"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cadastro - erro - CAMPO VAZIO",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/v1/financeiro",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"financeiro"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cadastro - erro - CARGO INEXISTENTE",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idFuncionario\": \"550e8400-e29b-41d4-a716-411115645634\",\r\n    \"cargo\": \"GERENTE\",\r\n    \"dataAdmissao\": \"2023-09-29T14:30+03:00\",\r\n    \"salario\": 10000.00,\r\n    \"clt\": \"111111\",\r\n    \"matricula\": \"111111\",\r\n    \"status\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/v1/financeiro",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"financeiro"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cadastro - erro - SEM UM CAMPO OBRIGATORIO",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idFuncionario\": \"\",\r\n    \"cargo\": \"FINANCEIRO\",\r\n    \"dataAdmissao\": \"2023-09-29T14:30+03:00\",\r\n    \"salario\": 6000.00,\r\n    \"clt\": \"33233\",\r\n    \"matricula\": \"33233\",\r\n    \"status\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/v1/financeiro",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"financeiro"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "UPDATE",
+			"item": []
+		},
+		{
+			"name": "DELETE",
+			"item": []
+		},
+		{
+			"name": "GET",
+			"item": []
+		}
+	]
+}

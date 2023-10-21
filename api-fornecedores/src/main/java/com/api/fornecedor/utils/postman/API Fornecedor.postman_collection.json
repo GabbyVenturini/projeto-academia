@@ -1,0 +1,160 @@
+{
+	"info": {
+		"_postman_id": "02dee875-2166-4594-9629-29e76f69e7ee",
+		"name": "API Fornecedor",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30063204"
+	},
+	"item": [
+		{
+			"name": "Criado com Sucesso",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nomeResponsavel\": \"Galvãoo Bueno\",\n    \"razaoSocial\": \"Blackk Rock\",\n    \"email\": \"blackrock@xx.com\",\n    \"cnpj\": \"02345678901234\",\n    \"status\": 1\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/fornecedor",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"fornecedor"
+					]
+				},
+				"description": "### Fornecedor API - Criar Fornecedor (POST)\n\nEste endpoint permite que você cadastre um novo fornecedor no sistema.  \nOs detalhes do fornecedor devem ser fornecidos no corpo da solicitação  \nno formato JSON. Certifique-se de fornecer informações precisas para  \ngarantir o correto registro do fornecedor no sistema.\n\n**URL:** `http://localhost:8080/v1/fornecedor`\n\n**Método HTTP:** POST\n\n**Corpo da Solicitação (JSON):**\n\n{  \n\"nomeResponsavel\": \"Galvão Bueno\",  \n\"razaoSocial\": \"Black Rock\",  \n\"email\": \"[blackrock@xx.com](https://mailto:blackrock@xx.com)\",  \n\"cnpj\": \"02345678901234\",  \n\"status\": 1  \n}\n\n**Parâmetros:**\n\n`nomeResponsavel` (string, obrigatório): O nome do responsável\n\n`razaoSocial` (string, obrigatório): A razão social do fornecedor.\n\n`email` (string, obrigatório): O endereço de e-mail do fornecedor.\n\n`cnpj` (string, obrigatório): O CNPJ com 14 dígitos.\n\n`status` (inteiro, obrigatório): O status do fornecedor (1 para ativo, 0 para inativo).\n\n**Notas Importantes:**\n\n\\-Todos os campos são obrigatórios.\n\n\\-O campo \"cnpj\" deve ser único e seguir o formato correto de 14 dígitos numéricos.\n\n\\-O campo \"status\" deve ser 1 para um novo fornecedor.\n\n**Resposta:**\n\n\\-Código de status 201 indica que o fornecedor foi cadastrado com sucesso. A resposta contém um ID exclusivo do fornecedor recém-criado.\n\n\\-Código de status 400 pode ocorrer se o e-mail ou CNPJ já estiverem cadastrados.A resposta inclui detalhes sobre os erros encontrados."
+			},
+			"response": []
+		},
+		{
+			"name": "Campo nome fora do padrão",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nomeResponsavel\": \"GalvãooBueno\",\n    \"razaoSocial\": \"Blackk Rock\",\n    \"email\": \"blackrock@xx.com\",\n    \"cnpj\": \"02345678901234\",\n    \"status\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/fornecedor",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"fornecedor"
+					]
+				},
+				"description": "### Fornecedor API - Criar Fornecedor (POST)\n\nEste endpoint permite que você cadastre um novo fornecedor no sistema.  \nOs detalhes do fornecedor devem ser fornecidos no corpo da solicitação  \nno formato JSON. Certifique-se de fornecer informações precisas para  \ngarantir o correto registro do fornecedor no sistema.\n\n**URL:** `http://localhost:8080/v1/fornecedor`\n\n**Método HTTP:** POST\n\n**Corpo da Solicitação (JSON):**\n\n{  \n\"nomeResponsavel\": \"Galvão Bueno\",  \n\"razaoSocial\": \"Black Rock\",  \n\"email\": \"[blackrock@xx.com](https://mailto:blackrock@xx.com)\",  \n\"cnpj\": \"02345678901234\",  \n\"status\": 1  \n}\n\n**Parâmetros:**\n\n`nomeResponsavel` (string, obrigatório): O nome do responsável\n\n`razaoSocial` (string, obrigatório): A razão social do fornecedor.\n\n`email` (string, obrigatório): O endereço de e-mail do fornecedor.\n\n`cnpj` (string, obrigatório): O CNPJ com 14 dígitos.\n\n`status` (inteiro, obrigatório): O status do fornecedor (1 para ativo, 0 para inativo).\n\n**Notas Importantes:**\n\n\\-Todos os campos são obrigatórios.\n\n\\-O campo \"cnpj\" deve ser único e seguir o formato correto de 14 dígitos numéricos.\n\n\\-O campo \"status\" deve ser 1 para um novo fornecedor.\n\n**Resposta:**\n\n\\-Código de status 201 indica que o fornecedor foi cadastrado com sucesso. A resposta contém um ID exclusivo do fornecedor recém-criado.\n\n\\-Código de status 400 pode ocorrer se o e-mail ou CNPJ já estiverem cadastrados.A resposta inclui detalhes sobre os erros encontrados."
+			},
+			"response": []
+		},
+		{
+			"name": "Fornecedor já cadastrado",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nomeResponsavel\": \"Galvãoo Bueno\",\n    \"razaoSocial\": \"Blackk Rock\",\n    \"email\": \"blackrock@xx.com\",\n    \"cnpj\": \"02345678901234\",\n    \"status\": 1\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/fornecedor",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"fornecedor"
+					]
+				},
+				"description": "### Fornecedor API - Criar Fornecedor (POST)\n\nEste endpoint permite que você cadastre um novo fornecedor no sistema.  \nOs detalhes do fornecedor devem ser fornecidos no corpo da solicitação  \nno formato JSON. Certifique-se de fornecer informações precisas para  \ngarantir o correto registro do fornecedor no sistema.\n\n**URL:** `http://localhost:8080/v1/fornecedor`\n\n**Método HTTP:** POST\n\n**Corpo da Solicitação (JSON):**\n\n{  \n\"nomeResponsavel\": \"Galvão Bueno\",  \n\"razaoSocial\": \"Black Rock\",  \n\"email\": \"[blackrock@xx.com](https://mailto:blackrock@xx.com)\",  \n\"cnpj\": \"02345678901234\",  \n\"status\": 1  \n}\n\n**Parâmetros:**\n\n`nomeResponsavel` (string, obrigatório): O nome do responsável\n\n`razaoSocial` (string, obrigatório): A razão social do fornecedor.\n\n`email` (string, obrigatório): O endereço de e-mail do fornecedor.\n\n`cnpj` (string, obrigatório): O CNPJ com 14 dígitos.\n\n`status` (inteiro, obrigatório): O status do fornecedor (1 para ativo, 0 para inativo).\n\n**Notas Importantes:**\n\n\\-Todos os campos são obrigatórios.\n\n\\-O campo \"cnpj\" deve ser único e seguir o formato correto de 14 dígitos numéricos.\n\n\\-O campo \"status\" deve ser 1 para um novo fornecedor.\n\n**Resposta:**\n\n\\-Código de status 201 indica que o fornecedor foi cadastrado com sucesso. A resposta contém um ID exclusivo do fornecedor recém-criado.\n\n\\-Código de status 400 pode ocorrer se o e-mail ou CNPJ já estiverem cadastrados.A resposta inclui detalhes sobre os erros encontrados."
+			},
+			"response": []
+		},
+		{
+			"name": "Campo E-mail fora do padrão",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nomeResponsavel\": \"Galvãoo Bueno\",\n    \"razaoSocial\": \"Blackk Rock\",\n    \"email\": \"blackrock@xx.com\",\n    \"cnpj\": \"02345678901234\",\n    \"status\": 1\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/fornecedor",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"fornecedor"
+					]
+				},
+				"description": "### Fornecedor API - Criar Fornecedor (POST)\n\nEste endpoint permite que você cadastre um novo fornecedor no sistema.  \nOs detalhes do fornecedor devem ser fornecidos no corpo da solicitação  \nno formato JSON. Certifique-se de fornecer informações precisas para  \ngarantir o correto registro do fornecedor no sistema.\n\n**URL:** `http://localhost:8080/v1/fornecedor`\n\n**Método HTTP:** POST\n\n**Corpo da Solicitação (JSON):**\n\n{  \n\"nomeResponsavel\": \"Galvão Bueno\",  \n\"razaoSocial\": \"Black Rock\",  \n\"email\": \"[blackrock@xx.com](https://mailto:blackrock@xx.com)\",  \n\"cnpj\": \"02345678901234\",  \n\"status\": 1  \n}\n\n**Parâmetros:**\n\n`nomeResponsavel` (string, obrigatório): O nome do responsável\n\n`razaoSocial` (string, obrigatório): A razão social do fornecedor.\n\n`email` (string, obrigatório): O endereço de e-mail do fornecedor.\n\n`cnpj` (string, obrigatório): O CNPJ com 14 dígitos.\n\n`status` (inteiro, obrigatório): O status do fornecedor (1 para ativo, 0 para inativo).\n\n**Notas Importantes:**\n\n\\-Todos os campos são obrigatórios.\n\n\\-O campo \"cnpj\" deve ser único e seguir o formato correto de 14 dígitos numéricos.\n\n\\-O campo \"status\" deve ser 1 para um novo fornecedor.\n\n**Resposta:**\n\n\\-Código de status 201 indica que o fornecedor foi cadastrado com sucesso. A resposta contém um ID exclusivo do fornecedor recém-criado.\n\n\\-Código de status 400 pode ocorrer se o e-mail ou CNPJ já estiverem cadastrados.A resposta inclui detalhes sobre os erros encontrados."
+			},
+			"response": []
+		},
+		{
+			"name": "Campo CNPJ fora do padrão",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nomeResponsavel\": \"Galvãoo Bueno\",\n    \"razaoSocial\": \"Blackk Rock\",\n    \"email\": \"blackrock@xx.com\",\n    \"cnpj\": \"6234567890123\",\n    \"status\": 1\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/fornecedor",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"fornecedor"
+					]
+				},
+				"description": "### Fornecedor API - Criar Fornecedor (POST)\n\nEste endpoint permite que você cadastre um novo fornecedor no sistema.  \nOs detalhes do fornecedor devem ser fornecidos no corpo da solicitação  \nno formato JSON. Certifique-se de fornecer informações precisas para  \ngarantir o correto registro do fornecedor no sistema.\n\n**URL:** `http://localhost:8080/v1/fornecedor`\n\n**Método HTTP:** POST\n\n**Corpo da Solicitação (JSON):**\n\n{  \n\"nomeResponsavel\": \"Galvão Bueno\",  \n\"razaoSocial\": \"Black Rock\",  \n\"email\": \"[blackrock@xx.com](https://mailto:blackrock@xx.com)\",  \n\"cnpj\": \"02345678901234\",  \n\"status\": 1  \n}\n\n**Parâmetros:**\n\n`nomeResponsavel` (string, obrigatório): O nome do responsável\n\n`razaoSocial` (string, obrigatório): A razão social do fornecedor.\n\n`email` (string, obrigatório): O endereço de e-mail do fornecedor.\n\n`cnpj` (string, obrigatório): O CNPJ com 14 dígitos.\n\n`status` (inteiro, obrigatório): O status do fornecedor (1 para ativo, 0 para inativo).\n\n**Notas Importantes:**\n\n\\-Todos os campos são obrigatórios.\n\n\\-O campo \"cnpj\" deve ser único e seguir o formato correto de 14 dígitos numéricos.\n\n\\-O campo \"status\" deve ser 1 para um novo fornecedor.\n\n**Resposta:**\n\n\\-Código de status 201 indica que o fornecedor foi cadastrado com sucesso. A resposta contém um ID exclusivo do fornecedor recém-criado.\n\n\\-Código de status 400 pode ocorrer se o e-mail ou CNPJ já estiverem cadastrados.A resposta inclui detalhes sobre os erros encontrados."
+			},
+			"response": []
+		}
+	]
+}
