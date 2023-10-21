@@ -1,0 +1,213 @@
+{
+	"info": {
+		"_postman_id": "6db22d05-13e4-46d8-95e6-c0b43c4d6bca",
+		"name": "API - PLANO",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30137697"
+	},
+	"item": [
+		{
+			"name": "cadastroValido",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"basico\",\r\n    \"descricao\": \"musculação e aerobico\",\r\n    \"valor\": 100.00,\r\n    \"valorPromocional\": 80.00,\r\n    \"status\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/plano",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"plano"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "planoInexistente",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"BRUNO LIZIAK\",\r\n    \"descricao\": \"musculação e aerobico\",\r\n    \"valor\": 100.00,\r\n    \"valorPromocional\": 80.00,\r\n    \"status\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/plano",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"plano"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cadastroInvalido",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \" \",\r\n    \"descricao\": \"musculação e aerobico\",\r\n    \"valor\": 100.00,\r\n    \"valorPromocional\": 80.00,\r\n    \"status\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/plano",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"plano"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cadastroDuplicado",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"BASICO\",\r\n    \"descricao\": \"musculação e aerobico\",\r\n    \"valor\": 100.00,\r\n    \"valorPromocional\": 80.00,\r\n    \"status\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/plano",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"plano"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cadastroValorZerado",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"BASICO\",\r\n    \"descricao\": \"musculação e aerobico\",\r\n    \"valor\": 0.00,\r\n    \"valorPromocional\": 80.00,\r\n    \"status\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/plano",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"plano"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cadastroValorPromocionalZerado",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"BASICO\",\r\n    \"descricao\": \"musculação e aerobico\",\r\n    \"valor\": 100.00,\r\n    \"valorPromocional\": 0.00,\r\n    \"status\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/plano",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"plano"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cadastroValoresIguais",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"BASICO\",\r\n    \"descricao\": \"musculação e aerobico\",\r\n    \"valor\": 100.00,\r\n    \"valorPromocional\": 100.00,\r\n    \"status\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/plano",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"plano"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
