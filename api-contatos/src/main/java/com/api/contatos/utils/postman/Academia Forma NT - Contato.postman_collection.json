@@ -1,0 +1,184 @@
+{
+	"info": {
+		"_postman_id": "95777241-b890-4794-b88f-774314bafbfc",
+		"name": "Academia Forma NT - Contato",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30032860"
+	},
+	"item": [
+		{
+			"name": "POST(Válido) Contato",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"contato\": \"71998635425\",\n    \"idCliente\": \"\",\n    \"idFornecedor\": \"f438c06f-ed1f-440d-9420-dd600123e0f0\",\n    \"idFuncionario\": \"\",\n    \"status\": 1\n}\n\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/contato",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"contato"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST(inválido) Contato existente",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"contato\": \"71998635425\",\n    \"idCliente\": \"\",\n    \"idFornecedor\": \"f438c06f-ed1f-440d-9420-dd600123e0f0\",\n    \"idFuncionario\": \"\",\n    \"status\": 1\n}\n\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/contato",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"contato"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST(inválido) Contato em branco",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"contato\": \"\",\n    \"idCliente\": \"\",\n    \"idFornecedor\": \"f438c06f-ed1f-440d-9420-dd600123e0f0\",\n    \"idFuncionario\": \"\",\n    \"status\": 1\n}\n\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/contato",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"contato"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST(Inválido) Ids em branco",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"contato\": \"71980028922\",\n    \"idCliente\": \"\",\n    \"idFornecedor\": \"\",\n    \"idFuncionario\": \"\",\n    \"status\": 1\n}\n\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/contato",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"contato"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST(Inválido) Ids excedentes",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"contato\": \"71980028922\",\n    \"idCliente\": \"\",\n    \"idFornecedor\": \"f438c06f-ed1f-440d-9420-dd600123e0f0\",\n    \"idFuncionario\": \"1a69b4a2-15ce-4b8c-a877-d704efe22f5d\",\n    \"status\": 1\n}\n\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/contato",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"contato"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST(inválido) Status inválido",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"contato\": \"71998635425\",\n    \"idCliente\": \"\",\n    \"idFornecedor\": \"f438c06f-ed1f-440d-9420-dd600123e0f0\",\n    \"idFuncionario\": \"\",\n    \"status\": 2\n}\n\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/contato",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"contato"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
